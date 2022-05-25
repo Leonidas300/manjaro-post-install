@@ -79,6 +79,7 @@ cd ~/ &&
 mkdir apps &&
 cd apps &&
 wget "https://builder.blender.org/download/daily/blender-2.83.21-candidate+v283.6f40a18ecc21-linux.x86_64-release.tar.xz" &&
+tar -xvf blender-2.83.21-candidate+v283.6f40a18ecc21-linux.x86_64-release.tar.xz &&
 
 echo "Installing gamemode" &&
 cd ~/ &&
