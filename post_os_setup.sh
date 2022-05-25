@@ -18,6 +18,7 @@ echo "Installing Default Apps"
 #flatpak
 sudo flatpak install io.github.hmlendea.geforcenow-electron -y && 
 sudo flatpak install com.heroicgameslauncher.hgl -y &&
+sudo flatpak install io.github.shiftey.Desktop -y &&
 #snap
 sudo systemctl start snapd &&#making sure it starts
 sudo systemctl enable --now snapd.socket &&#making sure it's enable the service
@@ -72,7 +73,21 @@ sudo pamac install duplicati-latest --no-confirm && #backup software
 sudo pamac install pureref --no-confirm &&
 sudo pamac install brave-bin --no-confirm &&
 
-echo "Setting up aliases"
+echo "Downloading Legacy Blender" &&
+
+cd ~/ &&
+mkdir apps &&
+cd apps &&
+wget "https://builder.blender.org/download/daily/blender-2.83.21-candidate+v283.6f40a18ecc21-linux.x86_64-release.tar.xz" &&
+
+echo "Installing gamemode" &&
+cd ~/ &&
+git clone https://github.com/FeralInteractive/gamemode.git &&
+cd gamemode &&
+git checkout 1.6.1 && # omit to build the master branch &&
+./bootstrap.sh &&
+
+echo "Setting up aliases" &&
 
 echo alias lsa=\"ls -lah\" >> ~/.zshrc
 echo alias sup=\"sudo pacman -Syu\" >> ~/.zshrc
