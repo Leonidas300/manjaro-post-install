@@ -16,6 +16,8 @@ sudo pacman -S libpamac-snap-plugin libpamac-flatpak-plugin --noconfirm &&
 echo "Installing Default Apps"
 
 #flatpak
+sudo flatpak install io.github.hmlendea.geforcenow-electron -y && 
+sudo flatpak install com.heroicgameslauncher.hgl -y &&
 #snap
 sudo systemctl start snapd &&#making sure it starts
 sudo systemctl enable --now snapd.socket &&#making sure it's enable the service
@@ -39,6 +41,8 @@ sudo pacman -S nextcloud-client --noconfirm &&
 #sudo pacman -S bitwarden --noconfirm &&
 sudo pacman -S kodi --noconfirm &&
 sudo pacman -S baobab --noconfirm &&
+sudo pacman -S xdotool --noconfirm && 
+sudo pacman -S qbittorrent --noconfirm &&
 
 sudo pacman -S wine winetricks wine-mono wine_gecko --noconfirm &&
 
